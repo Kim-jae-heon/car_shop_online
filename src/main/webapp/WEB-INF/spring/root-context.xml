@@ -8,14 +8,21 @@
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
 	
 	<!-- Root Context: defines shared resources visible to all other web components -->
+	<!-- 1. pom.xml에서 HikariCP 참조
+		 2. HikariConfig 클래스 (빈을 생성함) 
+		 3. ref="hikariConfig" HikariDataSource   	 
+	 -->
+	
 	<bean id="hikariConfig" class="com.zaxxer.hikari.HikariConfig">
 		<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"></property>
 		<property name="jdbcUrl" value="jdbc:oracle:thin:@localhost:1521:XE"></property>
-		<property name="username" value="book_ex"></property>
+		<property name="username" value="edu"></property>
 		<property name="password" value="1234"></property>
 	</bean>
 	
-	<!-- HikariCP configuration -->
+	<!-- HikariCP configuration
+		 HikariDataSource: 물리적인 DB에 연결하기 위한 팩토리 
+	 -->
 	<bean id="dataSource" class="com.zaxxer.hikari.HikariDataSource" destroy-method="close">
 		<constructor-arg ref="hikariConfig"></constructor-arg>
 	</bean>
