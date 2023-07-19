@@ -1,4 +1,4 @@
-package com.theinedu.teamprj;
+package com.theinedu.controller;
 
 import java.text.DateFormat;
 import java.util.Date;

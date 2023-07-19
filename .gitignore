@@ -1,1 +1,7 @@
 /.metadata/
+
+.settings/org.eclipse.core.resources.prefs
+.classpath
+.settings/org.eclipse.jdt.core.prefs
+.settings/org.eclipse.wst.common.component
+src/main/webapp/META-INF/maven/com.theinedu/teamprj/pom.properties
